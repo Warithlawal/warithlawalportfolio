@@ -175,18 +175,12 @@ header p {
     animation: slideLeft .8s ease-out forwards;
 }
 
-.about.show .about-para p:nth-child(1) { animation-delay: .1s; }
-.about.show .about-para p:nth-child(2) { animation-delay: .25s; }
 
 .about.show .about-details {
     opacity: 1;
     transform: translateX(0);
     animation: slideRight .8s ease-out forwards;
 }
-
-.about.show .about-details:nth-child(1) { animation-delay: .4s; }
-.about.show .about-details:nth-child(2) { animation-delay: .55s; }
-.about.show .about-details:nth-child(3) { animation-delay: .7s; }
 
 
 @keyframes slideLeft {
@@ -210,7 +204,6 @@ header p {
         transform: translateX(0);
     }
 }
-
 
 .opening-tag {
     color: #22d3ee;
@@ -495,6 +488,48 @@ header p {
     margin: 0 auto;
     max-width: 890px;
 }
+
+/* Hide both sides initially */
+.contact .contact-list {
+    opacity: 0;
+    transform: translateX(-40px);
+}
+
+.contact .form-container {
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+.contact.show .contact-list {
+    animation: fadeLeft .7s ease-out forwards;
+}
+
+.contact.show .form-container {
+    animation: fadeRight .7s ease-out forwards;
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 
 .contact h1 {
     font-size: 64px;

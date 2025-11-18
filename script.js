@@ -37,3 +37,15 @@ const projectObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 
 projectObserver.observe(projectSection);
+
+const contactSection = document.querySelector('.contact');
+
+const contactObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            contactSection.classList.add('show');
+        }
+    });
+}, { threshold: 0.3 });
+
+contactObserver.observe(contactSection);
