@@ -30,6 +30,13 @@ nav {
     text-decoration: none;
 }
 
+.links ul li a:hover {
+    background: linear-gradient(to right, #22d3ee, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 2s ease-out;
+}
+
 .logo h3 {
     font-size: 34px;
     font-weight: 900;
