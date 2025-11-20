@@ -176,7 +176,7 @@ header p {
     transition: .6s ease-out;
 }
 
-.about.show .about-para p {
+.about.show .about-para p,h1,ul,li {
     opacity: 1;
     transform: translateX(0);
     animation: slideLeft .8s ease-out forwards;
@@ -238,6 +238,26 @@ header p {
     color: #d1d5db;
     line-height: 30px;
     font-size: 18px;
+}
+
+.about-para h1 {
+    margin-bottom: 20px;
+}
+
+.cert {
+    margin-top: 15px;
+}
+
+.about-para ul li {
+    font-size: 18px;
+}
+
+.about-para ul li a {
+    color: #d1d5db;
+}
+
+.bottom-para {
+    margin-bottom: 30px;
 }
 
 .about-list {
@@ -721,6 +741,10 @@ footer {
 
     .about-para {
         line-height: 25px;
+        font-size: 15px;
+    }
+
+    .about-para ul li {
         font-size: 15px;
     }
 
