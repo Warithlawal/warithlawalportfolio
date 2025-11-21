@@ -688,7 +688,7 @@ form button {
 
 #successAlert {
     position: fixed;
-    bottom: 20px;
+    bottom: 65px;
     right: 20px;
     background: white;
     padding: 15px 18px;
