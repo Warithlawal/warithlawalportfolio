@@ -275,7 +275,7 @@
                     </div>
 
                     <div class="form-container">
-                        <form>
+                        <form id="contactForm">
                             <label>Name</label>
                             <input type="text" name="fullName" placeholder="Your Name" required>
 
@@ -283,10 +283,14 @@
                             <input type="email" name="email" placeholder="E-mail" required>
 
                             <label>Message</label>
-                            <textarea rows="6" cols="50" placeholder="Your Message"></textarea>
+                            <textarea name="message" rows="6" placeholder="Your Message"></textarea>
 
-                            <button>Send Message</button>
+                            <button type="submit">Send Message</button>
                         </form>
+                        <div id="successAlert" class="hidden">
+                            <img src="images/Success.gif" width="40">
+                            <span>Message Sent!</span>
+                        </div>
                     </div>
                 </div>
                 
@@ -298,6 +302,11 @@
             <p class="footer-para">© 2025 Warith Lawal. All rights reserved.</p>
             <p class="closing-tag">&lt;/ html &gt;</p>
         </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+    emailjs.init("2RqYRS6HHcywGdNGV"); 
+    </script>
+
     </body>
     <script src="script.js"></script>
 </html>

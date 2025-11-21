@@ -49,3 +49,42 @@ const contactObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 
 contactObserver.observe(contactSection);
+
+
+const form = document.getElementById("contactForm");
+const successAlert = document.getElementById("successAlert");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = {
+        fullName: form.fullName.value,
+        email: form.email.value,
+        message: form.message.value,
+    };
+
+    // 1️⃣ Send to YOU
+    emailjs.send("service_pmous8b", "template_peshu48", formData)
+
+        .then(() => {
+
+            // 2️⃣ Send auto reply to USER
+            emailjs.send("service_pmous8b", "template_24ch25p", formData)
+
+            // Reset form
+            form.reset();
+
+            // Show success toast
+            successAlert.classList.remove("hidden");
+            successAlert.classList.add("show");
+
+            // Hide after 4 seconds
+            setTimeout(() => {
+                successAlert.classList.remove("show");
+            }, 4000);
+        })
+
+        .catch((error) => {
+            console.log("FAILED...", error);
+        });
+});

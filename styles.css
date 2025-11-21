@@ -249,7 +249,7 @@ header p {
 }
 
 .about-para ul li {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .about-para ul li a {
@@ -661,10 +661,12 @@ form input {
     border: none;
     border-radius: 6px;
     border: 1px solid #1f2937;
+    color: white;
 }
 
 form textarea {
     background-color: #030712;
+    color: white;
     width: 100%;
     font-size: 16px;
     border: none;
@@ -684,6 +686,31 @@ form button {
     border: none;
 }
 
+#successAlert {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 15px 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+#successAlert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
 
 footer {
     text-align: center;
