@@ -58,6 +58,7 @@ nav {
 .links ul li a {
     text-decoration: none;
     color: white;
+    transition: 0.3s ease;
 }
 
 header {
@@ -320,37 +321,33 @@ header p {
     padding: 80px 5%;
 }
 
-.skills .stack-container,
+/* Initial state */
 .skills .stack {
     opacity: 0;
     transform: translateY(25px);
 }
 
-/* Fade in entire container */
-.skills.show .stack-container {
-    opacity: 1;
-    transform: translateY(0);
-    transition: .6s ease-out;
-}
-
-/* Each stack appears with stagger */
+/* Triggered state */
 .skills.show .stack {
-    opacity: 1;
-    transform: translateY(0);
-    animation: skillUp .7s ease-out forwards;
+    animation: skillUp 0.7s ease-out forwards;
 }
 
+/* Stagger each skill */
+.skills.show .stack:nth-child(1) { animation-delay: .2s; }
+.skills.show .stack:nth-child(2) { animation-delay: .35s; }
+.skills.show .stack:nth-child(3) { animation-delay: .5s; }
+.skills.show .stack:nth-child(4) { animation-delay: .65s; }
+.skills.show .stack:nth-child(5) { animation-delay: .8s; }
+.skills.show .stack:nth-child(6) { animation-delay: .95s; }
+.skills.show .stack:nth-child(7) { animation-delay: 1.1s; }
 
 @keyframes skillUp {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 
 
 .skills h1 {
@@ -389,39 +386,27 @@ header p {
     background-color: black;
 }
 
-.projects .project-container,
 .projects .project-card {
     opacity: 0;
-    transform: scale(0.95);
+    transform: translateY(25px) scale(0.95);
 }
 
-
-/* Fade container itself */
-.projects.show .project-container {
-    opacity: 1;
-    transform: scale(1);
-    transition: .7s ease-out;
-}
-
-/* Cards fade in + scale */
 .projects.show .project-card {
-    opacity: 1;
-    transform: scale(1);
-    animation: projectFade .7s ease-out forwards;
+    animation: projectStagger .8s ease-out forwards;
 }
 
+.projects.show .project-card:nth-child(1) { animation-delay: .2s; }
+.projects.show .project-card:nth-child(2) { animation-delay: .4s; }
+.projects.show .project-card:nth-child(3) { animation-delay: .6s; }
+.projects.show .project-card:nth-child(4) { animation-delay: .8s; }
 
-@keyframes projectFade {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
+/* Keyframes */
+@keyframes projectStagger {
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0) scale(1);
     }
 }
-
 
 
 .projects h1 {
@@ -514,48 +499,34 @@ header p {
     background-color: #111827;
     margin: 0 auto;
     max-width: 890px;
+    overflow-x: hidden;
 }
 
-/* Hide both sides initially */
-.contact .contact-list {
+/* Parent section animation for major blocks */
+/* Default state: hidden and shifted */
+.contact > * {
     opacity: 0;
-    transform: translateX(-40px);
+    transform: translateY(25px);
 }
 
-.contact .form-container {
-    opacity: 0;
-    transform: translateX(40px);
+/* Animation only starts when .show is added */
+.contact.show > * {
+    animation: fadeItem 0.8s ease-out forwards;
 }
 
-.contact.show .contact-list {
-    animation: fadeLeft .7s ease-out forwards;
-}
+.contact.show > *:nth-child(1) { animation-delay: .2s; }
+.contact.show > *:nth-child(2) { animation-delay: .35s; }
+.contact.show > *:nth-child(3) { animation-delay: .5s; }
+.contact.show > *:nth-child(4) { animation-delay: .65s; }
 
-.contact.show .form-container {
-    animation: fadeRight .7s ease-out forwards;
-}
-
-@keyframes fadeLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-40px);
-    }
+@keyframes fadeItem {
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
-@keyframes fadeRight {
-    from {
-        opacity: 0;
-        transform: translateX(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+
 
 
 .contact h1 {

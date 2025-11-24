@@ -25,6 +25,7 @@ const skillsObserver = new IntersectionObserver(entries => {
 
 skillsObserver.observe(skillsSection);
 
+
 // PROJECTS SECTION SCROLL ANIMATION
 const projectSection = document.querySelector('.projects');
 
@@ -38,6 +39,8 @@ const projectObserver = new IntersectionObserver(entries => {
 
 projectObserver.observe(projectSection);
 
+// CONATCT SECTION SCROLL ANIMATION
+
 const contactSection = document.querySelector('.contact');
 
 const contactObserver = new IntersectionObserver(entries => {
@@ -49,6 +52,8 @@ const contactObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 
 contactObserver.observe(contactSection);
+
+
 
 
 const form = document.getElementById("contactForm");
@@ -88,3 +93,4 @@ form.addEventListener("submit", function (e) {
             console.log("FAILED...", error);
         });
 });
+
