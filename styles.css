@@ -505,17 +505,13 @@ header p {
     background-color: #111827;
     margin: 0 auto;
     max-width: 890px;
-    overflow-x: hidden;
 }
 
-/* Parent section animation for major blocks */
-/* Default state: hidden and shifted */
 .contact > * {
     opacity: 0;
     transform: translateY(25px);
 }
 
-/* Animation only starts when .show is added */
 .contact.show > * {
     animation: fadeItem 0.8s ease-out forwards;
 }
@@ -531,8 +527,6 @@ header p {
         transform: translateY(0);
     }
 }
-
-
 
 
 .contact h1 {
