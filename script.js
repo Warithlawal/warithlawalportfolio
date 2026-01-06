@@ -54,31 +54,27 @@ const contactObserver = new IntersectionObserver(entries => {
 contactObserver.observe(contactSection);
 
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".links ul li a");
+const sections = document.querySelectorAll("header[id], section[id]");
+const navLinks = document.querySelectorAll(".links a");
 
-const observerr = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute("id");
-
-        navLinks.forEach(link => {
-          link.classList.remove("active");
-
-          if (link.getAttribute("href") === `#${id}`) {
-            link.classList.add("active");
-          }
-        });
-      }
-    });
-  },
-  {
-    threshold: 0.6, 
-  }
-);
+const observerr = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === `#${entry.target.id}`
+        );
+      });
+    }
+  });
+}, {
+  rootMargin: "-45% 0px -45% 0px",
+  threshold: 0
+});
 
 sections.forEach(section => observerr.observe(section));
+
 
 
 
