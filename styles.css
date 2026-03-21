@@ -155,6 +155,11 @@ header p {
     border: 1px groove #22d3ee;
 }
 
+.socials img {
+    width: 24px;
+    height: 24px;
+}
+
 .my-work{
     text-decoration: none;
     color: white;
@@ -288,8 +293,9 @@ header p {
     border: 1px groove #22d3ee;
 }
 
-.about-details i {
-    font-size: 18px;
+.about-details img {
+    width: 50px;
+    height: 50px
     padding: 14px 12px;
     border-radius: 8px;
     cursor: pointer;
@@ -500,6 +506,11 @@ header p {
     color: #22d3ee;
 }
 
+.code-link img {
+    width: 24px;
+    height: 24px;
+}
+
 .contact {
     padding: 80px 24px;
     background-color: #111827;
@@ -570,8 +581,9 @@ header p {
     cursor: pointer;
 }
 
-.contact-details i {
-    font-size: 18px;
+.contact-details img {
+    width: 50px;
+    height: 50px;
     padding: 14px 12px;
     border-radius: 8px;
     cursor: pointer;
